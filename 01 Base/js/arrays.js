@@ -67,6 +67,7 @@ console.log("Index of first 123:", array.indexOf(123));  // if not found = -1
 console.log("Index of last 123:", array.lastIndexOf(123));
 
 console.log("Found:", array.find((elem) => elem < 0));
+console.log("Found index:", array.findIndex((elem) => elem < 0));
 
 array.sort();
 console.log("Sorted by default:", array);
@@ -112,3 +113,6 @@ console.log("Summ:", summ);
 
 const max = array.reduce((prev, curr) => curr > prev ? curr : prev, array[0]);
 console.log("Max:", max);
+
+const filled = array.fill(1, 2, 6);
+console.log("Filled:", filled);
