@@ -15,7 +15,7 @@ createBtn.onclick = () => {
     //     name: nameIn.value,
     //     price: priceIn.value
     // };
-    let item = new Product(nameIn.value, priceIn.value);
+    let item = new Product(nameIn.value, priceIn.value, stockCheck.checked);
 
     console.log(item);
 
@@ -32,15 +32,23 @@ function addProductToTable(item) {
                             <th scope="row">${item.id}</th>
                             <td>${item.name}</td>
                             <td>${item.price}$</td>
+                            <td>
+                                ${item.inStock ? 
+                                '<span class="badge text-bg-primary">In Stock</span>'
+                                :
+                                '<span class="badge text-bg-secondary">Out of Stock</span>'
+                                }
+                            </td>
                         </tr>`;
 }
 
 class Product {
     static count = 10;
 
-    constructor(name, price) {
+    constructor(name, price, inStock) {
         this.name = name;
         this.price = price;
+        this.inStock = inStock;
         this.id = ++Product.count;
     }
 }
