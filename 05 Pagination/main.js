@@ -29,9 +29,11 @@ async function getDataFromServer(url) {
 
     for (const i of data.products) {
         
-        userList.innerHTML += ` <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                    ${i.title}
-                                    <span class="badge bg-primary rounded-pill">${i.price}$</span>
+        userList.innerHTML += `<li class="list-group-item list-group-item-action">
+                                    <a href='./details.html?id=${i.id}' class="d-flex justify-content-between align-items-center">
+                                        ${i.title}
+                                        <span class="badge bg-primary rounded-pill">${i.price}$</span>
+                                    </a>
                                 </li>`;
     }
 }
