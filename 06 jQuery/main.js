@@ -24,6 +24,8 @@
 
 const list = $('#my-list');
 
+list.append('<li>New the last item using jQuery</li>');
+
 list.children().eq(4).addClass('important');
 
 list.children().last().addClass('important');
